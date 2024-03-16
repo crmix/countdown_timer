@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="countdown-timer.css">
+    <title>CountDown Timer</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h2>
+            Offer Limit Date
+            <br>
+            21 Mar 2024 10:00 AM
+        </h2>
+        
+        <div class="timer-container">
+            <div class="box">
+                <span>1</span>
+                <h1>day</h1>
+            </div>
+
+            <div class="box">
+                <span>1</span>
+                <h1>hours</h1>
+            </div>
+
+            <div class="box">
+                <span>1</span>
+                <h1>minutes</h1>
+            </div>
+
+            <div class="box">
+                <span>1</span>
+                <h1>seconds</h1>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    //js power
+let current_Date="17 march 2024 12:00 pm ";
+
+let box_time = document.querySelectorAll(".box span")
+
+setInterval(() => {
+
+    let end = new Date
+    (current_Date);
+    let now = new Date(); 
+
+    let diff = (end - now)/1000;
+
+    if(diff<0) return;
+
+    console.log(diff)
+
+    box_time[0].innerText = Math.
+    floor(diff / 3600 / 24);
+
+    box_time[1].innerText = Math.
+    floor(diff / 3600 ) % 24;
+
+    box_time[2].innerText = Math.
+    floor(diff / 60) % 60;
+
+    box_time[3].innerText = Math.
+    floor(diff)%60;
+    
+}, 1000);
+
+</script>
+</html>  
